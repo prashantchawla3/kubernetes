@@ -1,3 +1,5 @@
-provider "kubernetes" {
-    congif_path = var.kubeconfig_path
+variable "kubeconfig_path" {
+  description = "Path to the kubeconfig file"
+  type        = string
 }
+

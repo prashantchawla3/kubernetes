@@ -1,0 +1,5 @@
+config_map_name       = "my-config"
+api_host              = "myhost:443"
+db_host               = "dbhost:5432"
+config_file_path      = "${path.module}/my_config_file.yml"
+payload_file_path     = "${path.module}/my_payload.bin"
