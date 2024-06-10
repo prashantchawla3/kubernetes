@@ -4,8 +4,8 @@ variable "kubeconfig_path" {
 }
 
 module "Routes" {
-  source          = "kubernetes/Terraform/Routes"
-  kubeconfig_path = "~/.kube/config"
+  source          = "./kubernetes/Terraform/Routes"
+  kubeconfig_path = var.kubeconfig_path
   namespace       = "default"
   app_name        = "my-nginx-app"
   app_label       = "nginx"
@@ -16,7 +16,7 @@ module "Routes" {
 }
 
 module "Pods" {
-  source                = "kubernetes/Terraform/pods"
+  source                = "./kubernetes/Terraform/Pods"
   pod_name              = "terraform-example"
   container_name        = "example"
   container_image       = "nginx:1.21.6"
@@ -43,7 +43,7 @@ module "Pods" {
 }
 
 module "Deployments" {
-  source                   = "kubernetes/Terraform/Deployments"
+  source                   = "./kubernetes/Terraform/Deployments"
   deployment_name          = "terraform-example"
   deployment_image         = "nginx:1.21.6"
   deployment_replicas      = 3
