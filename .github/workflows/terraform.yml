@@ -22,24 +22,24 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        #working-directory: ././main.tf
+        working-directory: ./Terraform
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
-        ##working-directory: ././main.tf
+        working-directory: ./Terraform
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve tfplan
-        ##working-directory: ././main.tf
+        working-directory: ./Terraform
 
-      # - name: Configure kubectl
-      #   env:
-      #     KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      #   run: |
-      #     echo "$KUBE_CONFIG_DATA" | base64 --decode > ${HOME}/.kube/config
-      #   working-directory: ./Terraform
+      - name: Configure kubectl
+        env:
+          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        run: |
+          echo "$KUBE_CONFIG_DATA" | base64 --decode > ${HOME}/.kube/config
+        working-directory: ./Terraform
 
-      # - name: Deploy to Kubernetes
-      #   run: kubectl apply -f ./deployments/
-      #   working-directory: kubernetes/main.tf
+      - name: Deploy to Kubernetes
+        run: kubectl apply -f ./deployments/
+        working-directory: ./Terraform
