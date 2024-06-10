@@ -22,16 +22,16 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: kubernetes/main.tf
+        working-directory: ../../kubernetes/main.tf
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
-        working-directory: kubernetes/main.tf
+        working-directory: ../../kubernetes/main.tf
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve tfplan
-        working-directory: kubernetes/main.tf
+        working-directory: ../../kubernetes/main.tf
 
       # - name: Configure kubectl
       #   env:
