@@ -1,0 +1,7 @@
+rc_name         = "terraform-example"
+app_label       = "MyExampleApp"
+image           = "nginx:1.21.6"
+cpu_limit       = "0.5"
+memory_limit    = "512Mi"
+cpu_request     = "250m"
+memory_request  = "50Mi"

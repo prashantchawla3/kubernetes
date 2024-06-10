@@ -1,0 +1,7 @@
+daemonset_name            = "terraform-example"
+daemonset_namespace       = "something"
+daemonset_image           = "nginx:1.21.6"
+daemonset_cpu_limit       = "0.5"
+daemonset_memory_limit    = "512Mi"
+daemonset_cpu_request     = "250m"
+daemonset_memory_request  = "50Mi"
