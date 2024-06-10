@@ -6,7 +6,7 @@ variable "kubeconfig_path" {
 
 
 module "Routes" {
-  source                  = "kubernetes-terraform/kubernetes/Terraform/Routes"
+  source                  = "kubernetes/Terraform/Routes"
     kubeconfig_path = "~/.kube/config"
     namespace       = "default"
     app_name        = "my-nginx-app"
@@ -19,7 +19,7 @@ module "Routes" {
 }
 
 module "Pods" {
-  source  = "kubernetes-terraform/kubernetes/Terraform/pods"
+  source  = "kubernetes/Terraform/pods"
   pod_name               = "terraform-example"
 container_name         = "example"
 container_image        = "nginx:1.21.6"
