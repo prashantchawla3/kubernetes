@@ -1,3 +1,8 @@
+variable "kubeconfig_path" {
+  description = "Path to the kubeconfig file"
+  type        = string
+}
+
 module "Routes" {
   source          = "./Terraform/Routes"
   kubeconfig_path = var.kubeconfig_path
