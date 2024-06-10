@@ -52,3 +52,4 @@ module "Deployments" {
   deployment_cpu_request   = "250m"
   deployment_memory_request = "50Mi"
 }
+
