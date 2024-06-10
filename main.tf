@@ -16,7 +16,7 @@ module "Routes" {
 }
 
 module "Pods" {
-  source                = "./Terraform/Pods"
+  source                = "./Terraform/pods"
   pod_name              = "terraform-example"
   container_name        = "example"
   container_image       = "nginx:1.21.6"
