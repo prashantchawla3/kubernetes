@@ -21,7 +21,7 @@ resource "kubernetes_deployment" "nginx" {
         container {
           name  = var.app_label
           image = var.image
-          ports {
+          port {
             container_port = var.target_port
           }
         }

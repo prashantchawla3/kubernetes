@@ -5,6 +5,7 @@ resource "kubernetes_network_policy" "example" {
   }
 
   spec {
+    policy_types = ["Ingress"]
     pod_selector {
       match_labels = {
         app = var.app_label

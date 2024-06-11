@@ -1,3 +1,12 @@
+# prashantchawla@JKP24PFPJ2- Routes % terraform validate
+# ╷
+# │ Error: Invalid resource type
+# │ 
+# │   on main.tf line 1, in resource "kubernetes_route" "example":
+# │    1: resource "kubernetes_route" "example" {
+# │ 
+# │ The provider hashicorp/kubernetes does not support resource type "kubernetes_route". Did you mean "kubernetes_role"?
+
 resource "kubernetes_route" "example" {
   metadata {
     name      = var.app_name

@@ -1,6 +1,5 @@
 provider "kubernetes" {
-  config_path    = "~/.kube/config"
-  config_context = "my-context"
+  config_path    = "kubernetes/kubeconfig.yaml"
 }
 
 resource "kubernetes_namespace" "example" {

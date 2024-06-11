@@ -1,10 +1,7 @@
 output "pod_name" {
-    description = "The name of the deployed pod"
-    value       = kubernetes_pod.example.metadata[0].name
+  value = kubernetes_pod.example.metadata
 }
 
-
-output "pod_ip" {
-    description = "The IP address of the deployed pod"
-    value       = kubernetes_pod.example.status[0].pod_ip
-}
+# output "pod_ip" {
+#   value = kubernetes_pod.example.status[0].pod_ip
+# }

@@ -1,4 +1,4 @@
-resource "kubernetes_pod" "test" {
+resource "kubernetes_pod" "example" {
   metadata {
     name = "terraform-example"
   }
@@ -39,7 +39,7 @@ resource "kubernetes_pod" "test" {
 
       option {
         name  = "ndots"
-        value = 1
+        value = "1"
       }
 
       option {
