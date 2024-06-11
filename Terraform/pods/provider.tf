@@ -8,3 +8,4 @@ resource "kubernetes_namespace" "example" {
     name = "my-first-namespace"
   }
 }
+
